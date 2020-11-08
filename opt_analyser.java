@@ -64,7 +64,7 @@ class opt_worker
                         sptr-=1;
                         else 
                         sptr-=2;
-                        if(precedence[hash.get(stack[sptr])][hash.get(Q)]=='u')
+                        if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')
                         {
                             System.out.println("E");
                             error_flag=true;
