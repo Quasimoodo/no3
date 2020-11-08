@@ -83,6 +83,10 @@ class opt_worker
 
                 }
             }
+            if(error_flag)
+            {
+                break;
+            }
             if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='<'||precedence[hash.get(stack[sptr])][hash.get(ch)]=='=')//小于或等于则移进
             {
                 if(ch=='#')
