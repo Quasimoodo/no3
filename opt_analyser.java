@@ -33,14 +33,16 @@ class opt_worker
         for(int i=0;i<buf.length;i++)
         {
             ch=buf[i];
-            if(buf[i]=='\r')
-            {
-                ch='#';
-            }
             if(error_flag)
             {
                 break;
             }
+            if(buf[i]=='\r')
+            {
+                ch='#';
+                error_flag=true;
+            }
+
             if(hash.get(stack[ptr])!=null)
             {
                 sptr=ptr;
