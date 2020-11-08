@@ -54,14 +54,15 @@ class opt_worker
                 while(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')
                 {
                     char Q=stack[sptr];
-                    while((precedence[hash.get(stack[sptr])][hash.get(Q)]=='>'))
+                    while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'))
                     {
                         if(hash.get(stack[sptr-1])!=null)
                         sptr-=1;
                         else 
                         sptr-=2;
                     }
-                    if((sptr+1==ptr&&stack[sptr+1]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||(stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N'))                  
+                    if((sptr+1==ptr&&stack[sptr+1]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||
+                    (stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N')||(stack[sptr+1]=='('&&stack[sptr+2]=='N'&&stack[sptr+3]==')'))                  
                     {
                         ptr=sptr+1;
                         stack[ptr]='N';
