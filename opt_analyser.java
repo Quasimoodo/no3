@@ -58,6 +58,12 @@ class opt_worker
                     char Q=stack[sptr];
                     while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'))
                     {
+                        if(precedence[hash.get(stack[sptr])][hash.get(Q)]=='u')
+                        {
+                            System.out.println("E");
+                            error_flag=true;
+                            break;
+                        }
                         Q=stack[sptr];
                         if(hash.get(stack[sptr-1])!=null)
                         sptr-=1;
