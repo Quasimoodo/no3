@@ -78,6 +78,10 @@ class opt_worker
             }
             if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='<'||precedence[hash.get(stack[sptr])][hash.get(ch)]=='=')//小于或等于则移进
             {
+                if(ch=='#')
+                {
+                    break;
+                }
                 stack[++ptr]=ch;
                 System.out.println("I"+ch);
             }
