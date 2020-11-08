@@ -13,7 +13,7 @@ class opt_worker
         {'<','<','<','<','u','='}
         };
     int ptr=0;
-    char[] stack=new char[100000];
+    char[] stack=new char[10000000];
     Map <Character,Integer> hash= new HashMap <Character,Integer>();
     void init ()
     {
