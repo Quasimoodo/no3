@@ -64,12 +64,6 @@ class opt_worker
                         sptr-=1;
                         else 
                         sptr-=2;
-                        if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')
-                        {
-                            System.out.println("E");
-                            error_flag=true;
-                            break;
-                        }
 
                     }
                     if((sptr+1==ptr&&stack[sptr+1]=='i')||
@@ -80,6 +74,12 @@ class opt_worker
                         ptr=sptr+1;
                         stack[ptr]='N';
                         System.out.println('R');
+                        if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')
+                        {
+                            System.out.println("E");
+                            error_flag=true;
+                            break;
+                        }
                     }
                     else
                     {
