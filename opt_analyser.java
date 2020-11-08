@@ -54,7 +54,7 @@ class opt_worker
                 while(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')
                 {
                     char Q=stack[sptr];
-                    while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'))
+                    while((precedence[hash.get(stack[sptr])][hash.get(Q)]=='>'))
                     {
                         if(hash.get(stack[sptr-1])!=null)
                         sptr-=1;
