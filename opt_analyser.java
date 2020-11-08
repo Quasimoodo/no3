@@ -10,7 +10,7 @@ class opt_worker
         {'>','>','u','u','>','>'},
         {'<','<','<','<','=','u'},
         {'>','>','u','u','>','>'},
-        {'<','<','<','<','u','='}
+        {'<','<','<','<','u','='},
         };
     int ptr=0;
     char[] stack=new char[10000000];
@@ -50,6 +50,12 @@ class opt_worker
             else
             {
                 sptr=ptr-1;
+            }
+            if(hash.get(ch)==null)
+            {
+                System.out.println("E");
+                error_flag=true;
+                break;
             }
             if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')//试图规约
             {
