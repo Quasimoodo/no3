@@ -76,6 +76,7 @@ class opt_worker
                     {
                         ptr=sptr+1;
                         stack[ptr]='N';
+                        System.out.println('R');
                     }
                     else
                     {
