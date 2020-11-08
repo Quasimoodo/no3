@@ -63,16 +63,14 @@ class opt_worker
                 while(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')
                 {
                     char Q=stack[sptr];
-                    while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'));
+                    while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'))
                     {
-                        Q=stack[sptr];
                         if(hash.get(stack[sptr-1])!=null)
                         sptr-=1;
                         else 
                         sptr-=2;
                     }
-                    if((sptr+1==ptr&&stack[sptr]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||(stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N'))
-                    
+                    if((sptr+1==ptr&&stack[sptr]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||(stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N'))                  
                     {
                         ptr=sptr+1;
                         stack[ptr]='N';
@@ -81,7 +79,8 @@ class opt_worker
                     else
                     {
                         System.out.println("RE");
-
+                        error_flag=true;
+                        break;
                     }
 
                 }
