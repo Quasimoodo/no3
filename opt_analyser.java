@@ -4,7 +4,7 @@ import java.util.*;
 
 class opt_worker
 {
-    char[][] precedence=new char [][]{
+    static char[][] precedence=new char [][]{
         {'>','<','<','<','>','>'},
         {'>','>','<','<','>','>'},
         {'>','>','u','u','>','>'},
