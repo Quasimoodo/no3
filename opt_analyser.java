@@ -49,16 +49,7 @@ class opt_worker
             {
                 sptr=ptr-1;
             }
-            if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='<'||precedence[hash.get(stack[sptr])][hash.get(ch)]=='=')//小于或等于则移进
-            {
-                stack[++ptr]=ch;
-                System.out.println("I"+ch);
-            }
-            else if (precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')//未定义
-            {
-                System.out.println("E");
-            }
-            else if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')//试图规约
+            if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')//试图规约
             {
                 while(precedence[hash.get(stack[sptr])][hash.get(ch)]=='>')
                 {
@@ -70,7 +61,7 @@ class opt_worker
                         else 
                         sptr-=2;
                     }
-                    if((sptr+1==ptr&&stack[sptr]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||(stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N'))                  
+                    if((sptr+1==ptr&&stack[sptr+1]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||(stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N'))                  
                     {
                         ptr=sptr+1;
                         stack[ptr]='N';
@@ -84,6 +75,15 @@ class opt_worker
                     }
 
                 }
+            }
+            if(precedence[hash.get(stack[sptr])][hash.get(ch)]=='<'||precedence[hash.get(stack[sptr])][hash.get(ch)]=='=')//小于或等于则移进
+            {
+                stack[++ptr]=ch;
+                System.out.println("I"+ch);
+            }
+            else if (precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')//未定义
+            {
+                System.out.println("E");
             }
             else
             {
