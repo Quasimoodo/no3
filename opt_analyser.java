@@ -56,11 +56,12 @@ class opt_worker
                     char Q=stack[sptr];
                     while(!(precedence[hash.get(stack[sptr])][hash.get(Q)]=='<'))
                     {
+                        Q=stack[sptr];
                         if(hash.get(stack[sptr-1])!=null)
                         sptr-=1;
                         else 
                         sptr-=2;
-                    Q=stack[sptr];
+
                     }
                     if((sptr+1==ptr&&stack[sptr+1]=='i')||
                     (stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||
