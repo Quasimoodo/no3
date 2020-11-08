@@ -60,9 +60,12 @@ class opt_worker
                         sptr-=1;
                         else 
                         sptr-=2;
+                    Q=stack[sptr];
                     }
-                    if((sptr+1==ptr&&stack[sptr+1]=='i')||(stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||
-                    (stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N')||(stack[sptr+1]=='('&&stack[sptr+2]=='N'&&stack[sptr+3]==')'))                  
+                    if((sptr+1==ptr&&stack[sptr+1]=='i')||
+                    (stack[sptr+1]=='N'&&stack[sptr+2]=='+'&&stack[sptr+3]=='N')||
+                    (stack[sptr+1]=='N'&&stack[sptr+2]=='*'&&stack[sptr+3]=='N')||
+                    (stack[sptr+1]=='('&&stack[sptr+2]=='N'&&stack[sptr+3]==')'))                  
                     {
                         ptr=sptr+1;
                         stack[ptr]='N';
