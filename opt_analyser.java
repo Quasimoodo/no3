@@ -88,10 +88,14 @@ class opt_worker
             else if (precedence[hash.get(stack[sptr])][hash.get(ch)]=='u')//未定义
             {
                 System.out.println("E");
+                error_flag=true;
+                break;
             }
             else
             {
                 System.out.println('E');
+                error_flag=true;
+                break;
             }
 
         }
